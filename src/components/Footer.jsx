@@ -1,49 +1,77 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-black/40">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 md:flex-row md:items-center md:justify-between">
-        {/* Ліва частина: лого + текст */}
-        <div className="flex items-start gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-indigo-500 via-sky-400 to-emerald-400">
-            <span className="text-lg font-bold leading-none text-white">TB</span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-semibold text-white">
-              TradeBlade
-            </span>
-            <span className="text-xs text-white/60">
-              Trading analytics & risk management platform for serious traders.
-            </span>
-          </div>
-        </div>
+    <footer className="border-t border-[#3834a5] bg-[#050816] text-white">
+      <div className="mx-auto max-w-6xl px-4 py-10">
+        <div className="grid gap-8 md:grid-cols-[2fr_minmax(0,1fr)] md:items-start">
+          {/* Ліва частина */}
+          <div className="flex flex-col justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-white/40">
+                БЫСТРАЯ НАВИГАЦИЯ
+              </p>
+            </div>
 
-        {/* Центр: навігація */}
-        <nav className="text-xs text-white/60 md:text-sm">
-          <ul className="flex flex-wrap items-center gap-4 md:gap-6">
-            <li>
-              <a href="#features" className="hover:text-white">
-                Features
-              </a>
-            </li>
-            <li>
-              <a href="#pricing" className="hover:text-white">
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a href="#faq" className="hover:text-white">
-                FAQ
-              </a>
-            </li>
-          </ul>
-        </nav>
+            <nav className="mt-10 text-xs text-white/70 md:mt-24">
+              <ul className="flex flex-wrap gap-x-6 gap-y-3">
+                <li>
+                  <a href="#stats" className="hover:text-white">
+                    ЦИФРЫ
+                  </a>
+                </li>
+                <li>
+                  <a href="#deals" className="hover:text-white">
+                    СДЕЛКИ ОНЛАЙН
+                  </a>
+                </li>
+                <li>
+                  <a href="#company" className="hover:text-white">
+                    О КОМПАНИИ
+                  </a>
+                </li>
+                <li>
+                  <a href="#about" className="hover:text-white">
+                    TRADEBLADE ЭТО
+                  </a>
+                </li>
+                <li>
+                  <a href="#pricing" className="hover:text-white">
+                    ТАРИФЫ
+                  </a>
+                </li>
+                <li>
+                  <a href="#faq" className="hover:text-white">
+                    FAQ
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
 
-        {/* Права частина: копірайт */}
-        <div className="text-xs text-white/50 md:text-right">
-          <p>© {new Date().getFullYear()} TradeBlade. All rights reserved.</p>
-          <p className="mt-1">Made for traders, not for gurus.</p>
+          {/* Права частина */}
+          <div className="flex flex-col items-start justify-between gap-6 md:items-end md:border-l md:border-white/10 md:pl-8">
+            {/* Лого справа */}
+            <div className="flex items-center gap-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-md bg-gradient-to-tr from-indigo-600 via-purple-600 to-sky-400 shadow-[0_0_25px_rgba(129,140,248,0.8)]">
+                <span className="text-lg font-extrabold">T</span>
+              </div>
+              <div className="flex flex-col leading-tight">
+                <span className="text-sm font-extrabold tracking-wide">
+                  TRADE
+                  <span className="ml-1">BLADE</span>
+                </span>
+              </div>
+            </div>
+
+            {/* Копірайт */}
+            <div className="text-[11px] text-white/60 md:text-right">
+              <p>© 2022 TradeBlade. All rights reserved</p>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* Низ фіолетовою лінією */}
+      <div className="h-[2px] w-full bg-[#3834a5]" />
     </footer>
   );
 }

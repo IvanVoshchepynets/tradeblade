@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Features from "./components/Features";
+import StatsAndDeals from "./components/StatsAndDeals";
 import Pricing from "./components/Pricing";
 import Faq from "./components/Faq";
 import Footer from "./components/Footer";
@@ -12,7 +12,7 @@ function App() {
 
       <main className="pt-24">
         <Hero />
-        <Features />
+        <StatsAndDeals />
         <Pricing />
         <Faq />
       </main>
