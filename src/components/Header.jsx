@@ -1,11 +1,15 @@
 import { useState } from "react";
 
 const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Community", href: "#community" },
+  { label: "ЦИФРЫ", href: "#stats" },
+  { label: "СДЕЛКИ ОНЛАЙН", href: "#deals" },
+  { label: "О КОМПАНИИ", href: "#company" },   
+  { label: "КАК НАЧАТЬ", href: "#how" },       
+  { label: "ТАРИФЫ", href: "#pricing" },
+  { label: "ОТЗЫВЫ", href: "#reviews" },       
   { label: "FAQ", href: "#faq" },
 ];
+
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -100,11 +104,11 @@ export default function Header() {
             </ul>
 
             <div className="flex flex-col gap-2 pt-2">
-              <button className="w-full rounded-full border border-white/25 px-4 py-2 text-sm text-white">
-                Log in
+              <button className="text-sm text-white/70 hover:text-white">
+                ВХОД
               </button>
-              <button className="w-full rounded-full bg-white px-4 py-2 text-sm font-medium text-black">
-                Sign up
+              <button className="rounded-full bg-sky-400 px-4 py-2 text-sm font-medium text-black hover:bg-sky-300">
+                РЕГИСТРАЦИЯ
               </button>
             </div>
           </div>
