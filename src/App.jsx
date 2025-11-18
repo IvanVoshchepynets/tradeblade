@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
 import Pricing from "./components/Pricing";
+import Faq from "./components/Faq";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
         <Hero />
         <Features />
         <Pricing />
-        {/* Далі додамо, наприклад, FAQ і Footer */}
+        <Faq />
+        {/* Тут далі буде Footer */}
       </main>
     </div>
   );
