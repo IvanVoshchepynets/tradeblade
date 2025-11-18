@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
+import Pricing from "./components/Pricing";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <main className="pt-24">
         <Hero />
         <Features />
-        {/* Далі підуть наступні секції: Pricing, Community, FAQ, Footer */}
+        <Pricing />
+        {/* Далі додамо, наприклад, FAQ і Footer */}
       </main>
     </div>
   );
