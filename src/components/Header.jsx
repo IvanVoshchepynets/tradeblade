@@ -1,38 +1,33 @@
 import { useState } from "react";
+import logo from "../assets/logo-tradeblade.svg";
 
 const navLinks = [
   { label: "ЦИФРЫ", href: "#stats" },
   { label: "СДЕЛКИ ОНЛАЙН", href: "#deals" },
-  { label: "О КОМПАНИИ", href: "#company" },   
-  { label: "КАК НАЧАТЬ", href: "#how" },       
+  { label: "О КОМПАНИИ", href: "#company" },
+  { label: "КАК НАЧАТЬ", href: "#how" },
   { label: "ТАРИФЫ", href: "#pricing" },
-  { label: "ОТЗЫВЫ", href: "#reviews" },       
+  { label: "ОТЗЫВЫ", href: "#reviews" },
   { label: "FAQ", href: "#faq" },
 ];
-
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-black/60 backdrop-blur">
+    <header className="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-[#050816]/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
-        {/* Лого */}
+
+        {/* ==== ЛОГО ==== */}
         <a href="#" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-indigo-500 via-sky-400 to-emerald-400">
-            <span className="text-lg font-bold leading-none text-white">TB</span>
-          </div>
-          <div className="flex flex-col leading-tight">
-            <span className="text-sm font-semibold text-white md:text-base">
-              TradeBlade
-            </span>
-            <span className="text-[10px] text-white/60 md:text-xs">
-              Trading analytics platform
-            </span>
-          </div>
+          <img
+            src={logo}
+            alt="TradeBlade Logo"
+            className="h-10 w-auto drop-shadow-[0_0_20px_rgba(107,75,255,0.6)]"
+          />
         </a>
 
-        {/* Десктоп-меню */}
+        {/* ==== ДЕСКТОП-МЕНЮ ==== */}
         <nav className="hidden items-center gap-8 md:flex">
           <ul className="flex items-center gap-6 text-sm text-white/70">
             {navLinks.map((item) => (
@@ -47,24 +42,26 @@ export default function Header() {
             ))}
           </ul>
 
+          {/* ==== ВХОД / РЕГИСТРАЦИЯ ==== */}
           <div className="flex items-center gap-3">
-            <button className="text-sm text-white/70 transition-colors hover:text-white">
-              Log in
+            {/* ВХОД */}
+            <button className="rounded-md border border-[#27C4FF] bg-[#061426] px-6 py-1.5 text-sm font-semibold text-[#27C4FF] shadow-[0_0_12px_rgba(39,196,255,0.5)] transition hover:bg-[#0a1c33]">
+              ВХОД
             </button>
-            <button className="rounded-full bg-white px-4 py-2 text-sm font-medium text-black transition hover:bg-slate-100">
-              Sign up
+
+            {/* РЕГИСТРАЦИЯ */}
+            <button className="rounded-md bg-[#27C4FF] px-6 py-1.5 text-sm font-semibold text-black transition hover:bg-[#1fb4ec]">
+              РЕГИСТРАЦИЯ
             </button>
           </div>
         </nav>
 
-        {/* Мобільна кнопка-бургер */}
+        {/* ==== МОБІЛЬНА КНОПКА ==== */}
         <button
           className="inline-flex items-center justify-center rounded-md border border-white/15 p-2 text-white md:hidden"
           onClick={() => setIsOpen((prev) => !prev)}
           aria-label="Toggle navigation"
         >
-          <span className="sr-only">Open main menu</span>
-          {/* Іконка бургер / х */}
           <span className="relative flex h-4 w-4 items-center justify-center">
             <span
               className={`absolute h-[2px] w-4 bg-white transition-transform ${
@@ -85,9 +82,9 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Мобільне меню */}
+      {/* ==== МОБІЛЬНЕ МЕНЮ ==== */}
       {isOpen && (
-        <div className="border-t border-white/10 bg-black/90 md:hidden">
+        <div className="border-t border-white/10 bg-[#050816]/95 md:hidden">
           <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4">
             <ul className="flex flex-col gap-3 text-sm text-white/80">
               {navLinks.map((item) => (
@@ -104,10 +101,14 @@ export default function Header() {
             </ul>
 
             <div className="flex flex-col gap-2 pt-2">
-              <button className="text-sm text-white/70 hover:text-white">
+
+              {/* Mobile ВХОД */}
+              <button className="rounded-md border border-[#27C4FF] bg-[#061426] px-4 py-2 text-sm font-semibold text-[#27C4FF] shadow-[0_0_12px_rgba(39,196,255,0.5)]">
                 ВХОД
               </button>
-              <button className="rounded-full bg-sky-400 px-4 py-2 text-sm font-medium text-black hover:bg-sky-300">
+
+              {/* Mobile РЕГИСТРАЦИЯ */}
+              <button className="rounded-md bg-[#27C4FF] px-4 py-2 text-sm font-medium text-black">
                 РЕГИСТРАЦИЯ
               </button>
             </div>

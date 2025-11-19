@@ -4,81 +4,96 @@ const faqs = [
   {
     question: "Что такое TradeBlade",
     answer:
-      "Мы опытная команда, для которой трейдинг – профессия. TradeBlade является авторизованным официальным брокером биржи Binance. Он представляет пользователям множество преимуществ, таких как более высокая скорость синхронизации API и возможность создать учетную запись Binance через платформу TradeBlade всего в 1 клик.",
+      "Мы опытная команда, для которой трейдинг – профессия. TradeBlade является авторизованным официальным брокером биржи Binance.\n\nОн представляет пользователям множество преимуществ, таких как более высокая скорость синхронизации API и возможность создать учетную запись Binance через платформу TradeBlade всего в 1 клик.",
   },
   {
     question: "Что TradeBlade предлагает инвесторам",
-    answer:
-      "Здесь будет текст как в макете, можешь просто скопировать его из Figma.",
+    answer: "Здесь будет текст как в макете.",
   },
   {
     question: "Должен ли я перевести свои средства на TradeBlade",
-    answer:
-      "Тоже вставь текст из макета, чтобы полностью совпадало.",
+    answer: "Здесь будет текст как в макете.",
   },
 ];
 
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState(0);
 
-  const toggle = (idx) => {
-    setOpenIndex((current) => (current === idx ? -1 : idx));
+  const toggle = (i) => {
+    setOpenIndex(openIndex === i ? -1 : i);
   };
 
   return (
     <section
       id="faq"
-      className="mx-auto max-w-4xl px-4 pb-20 pt-8 md:pb-24 md:pt-16"
+      className="bg-white py-16 md:py-20"
     >
-      {/* Заголовок */}
-      <div className="mb-8 text-center md:mb-10">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-400/80">
-          FAQ
-        </p>
-        <h2 className="mt-3 text-2xl font-semibold text-white md:text-3xl">
-          Часті запитання про TradeBlade
+      <div className="mx-auto max-w-4xl px-4">
+        {/* Заголовок */}
+        <h2 className="text-center text-3xl font-extrabold uppercase text-black md:text-4xl">
+          ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
         </h2>
-        <p className="mt-3 text-sm text-white/65 md:text-base">
-          Якщо у вас залишилися інші питання — ви завжди можете написати в сапорт
-          або комʼюніті.
-        </p>
-      </div>
 
-      {/* Аккордеон */}
-      <div className="space-y-3">
-        {faqs.map((item, idx) => {
-          const isOpen = openIndex === idx;
+        {/* FAQ */}
+        <div className="mt-10 space-y-3">
+          {faqs.map((item, idx) => {
+            const isOpen = openIndex === idx;
 
-          return (
-            <div
-              key={item.question}
-              className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 md:px-5 md:py-4"
-            >
-              <button
-                type="button"
-                onClick={() => toggle(idx)}
-                className="flex w-full items-center justify-between gap-4 text-left"
-              >
-                <span className="text-sm font-medium text-white md:text-base">
-                  {item.question}
-                </span>
-                <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-white/20 text-xs text-white/70">
-                  {isOpen ? "−" : "+"}
-                </span>
-              </button>
-
+            return (
               <div
-                className={`grid overflow-hidden text-xs text-white/70 transition-[grid-template-rows,opacity] duration-200 ease-out md:text-sm ${
-                  isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                key={idx}
+                className={`rounded-xl transition ${
+                  isOpen ? "bg-[#6B4BFF] text-white" : "bg-[#E7EBF0] text-black"
                 }`}
               >
-                <div className="mt-2 min-h-0 border-t border-white/10 pt-3 text-white/70">
-                  {item.answer}
+                {/* Кнопка заголовка */}
+                <button
+                  onClick={() => toggle(idx)}
+                  className={`flex w-full items-center justify-between px-6 py-4 text-left text-lg font-semibold`}
+                >
+                  {item.question}
+
+                  {/* Стрілка */}
+                  <span
+                    className={`transition-transform ${
+                      isOpen ? "rotate-180" : "rotate-0"
+                    }`}
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={isOpen ? "stroke-white" : "stroke-black"}
+                    >
+                      <path
+                        d="M5 7L10 12L15 7"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </span>
+                </button>
+
+                {/* Контент */}
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${
+                    isOpen ? "max-h-[500px] px-6 pb-6" : "max-h-0 px-6 pb-0"
+                  }`}
+                >
+                  <p
+                    className={`whitespace-pre-line text-sm leading-relaxed ${
+                      isOpen ? "text-white/90" : "text-black"
+                    }`}
+                  >
+                    {item.answer}
+                  </p>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

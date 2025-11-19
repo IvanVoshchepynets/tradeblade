@@ -29,7 +29,7 @@ const deals = [
   {
     pair: "NEAR/USDT",
     type: "SPOT · 1 мин. назад",
-    profit: "0.963%",
+    profit: "58.6206%",
     target: "Цель 4",
     date: "Дата входа 06.10.2022",
   },
@@ -66,17 +66,13 @@ export default function StatsAndDeals() {
         </div>
       </section>
 
-      {/* ПРОШЕДШИЕ СДЕЛКИ – темний фон */}
-      <section
-        id="deals"
-        className="bg-[#050816] py-12 text-white"
-      >
+      {/* ПРОШЕДШИЕ СДЕЛКИ */}
+      <section id="deals" className="bg-[#050816] py-12 text-white">
         <div className="mx-auto max-w-6xl px-4">
-          <div className="mb-6 flex items-center gap-3">
-            <h2 className="text-2xl font-extrabold">
-              ПРОШЕДШИЕ СДЕЛКИ
-            </h2>
-            <span className="flex items-center gap-1 text-xs text-emerald-400">
+          {/* Заголовок + онлайн */}
+          <div className="mb-6">
+            <h2 className="text-2xl font-extrabold">ПРОШЕДШИЕ СДЕЛКИ</h2>
+            <span className="mt-2 inline-flex items-center gap-1 text-xs text-emerald-400">
               <span className="h-2 w-2 rounded-full bg-emerald-400" />
               Онлайн
             </span>
